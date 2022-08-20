@@ -16,4 +16,5 @@ jobs:
       - name: Install dependencies, build & deploy
         run: npm ci && npm run deploy
         env:
+          CI: true
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIREBASE_WORKFLOW }}
