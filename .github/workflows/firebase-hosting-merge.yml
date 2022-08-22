@@ -14,7 +14,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies, build & deploy
-        run: npm ci && npm run deploy
+        run: npm ci
+
+      - name: build && deploy
+        run: npm run deploy
         env:
           CI: true
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIREBASE_WORKFLOW }}
